@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private List<Getter> input;
+
 
 
 
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        List<Getter> input = new ArrayList<>();
+        input = new ArrayList<>();
 
 
         input.add(new Getter(
@@ -91,49 +93,56 @@ public class MainActivity extends AppCompatActivity {
         m_Adapter = new My_Adapter(input);
         recyclerView.setAdapter(m_Adapter);
 
-//        if (i % 2 == 0) {
-//            Log.v(“log_tag”, “ ” + i);
-//        } else {
-//            Log.v(“log_tag”, " ” + i);
-//        }
-//    }
 
 
 
-        final int maxSpansPerRow = 6;
+        int maxSpansPerRow = 6;
 
 
 
-        GridLayoutManager gridview = new GridLayoutManager(this,maxSpansPerRow);
+        final GridLayoutManager gridview = new GridLayoutManager(this,maxSpansPerRow);
 
         gridview.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
 
 
-                switch (position % 7) {
-                    // first three items span 3 columns each
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                        return 3;
-                    // next four items span 2 columns each
+                if (input.size() % 2 == 1)
 
+                {
+                    if (position == input.size() - 1) {
 
-                    case 6:
                         return 6;
+
+                    } else {
+
+                        return 3;
+                    }
                 }
-                return position;
+                else {
+
+                    return 3;
+                }
+
+
+//                switch (position % 7) {
+//                    // first three items span 3 columns each
+//                    case 0:
+//                    case 1:
+//                    case 2:
+//                    case 3:
+//                    case 4:
+//                    case 5:
+//                        return 3;
+//                    // next four items span 2 columns each
+//
+//
+//                    case 6:
+//                        return 6;
+//                }
+//                return position;
             }
 
-
-
-
-
-//                return (position % 3 == 0 ? 8 : 1);
 
 
         });
