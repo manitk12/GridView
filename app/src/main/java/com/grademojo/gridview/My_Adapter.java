@@ -1,5 +1,6 @@
 package com.grademojo.gridview;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,7 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
 
         public ImageView imageView_search;
 
-        public View view_Line;
+        public View view_Line ,view_Line1 ,view_Line2;
 
 
 
@@ -45,6 +46,10 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
             imageView_search = (ImageView) itemView.findViewById(R.id.image);
 
             view_Line = itemView.findViewById(R.id.view_line);
+
+            view_Line1 = itemView.findViewById(R.id.view_line1);
+
+            view_Line2 = itemView.findViewById(R.id.view_line2);
 
 
 
@@ -81,28 +86,29 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
         Getter item = values.get(position);
 
 
+        String text_serach = values.get(position).getSearch();
 
 
 
-
-
-        // Information current=data.get(position);
-        //   holder.title.setText(current.title);
-
-        // holder.title.setText(current.title);
-
-
-        //Integer.parseInt(view.getTag().toString())
 
         holder.imageView_search.setImageResource(
                 item.getImage_icon()
         );
 
-       holder.text_search.setText(""+item.getSearch());
+     //  holder.text_search.setText(""+item.getSearch());
+
+        holder.text_search.setText(""+text_serach);
 
 
 
-     holder.view_Line.setBackgroundColor(item.getView1());
+     holder.view_Line.setBackgroundColor(
+             ContextCompat.getColor(holder.layout.getContext(), item.getView1())
+     );
+
+        holder.view_Line1.setBackgroundColor(ContextCompat.getColor(holder.layout.getContext(), item.getView2()));
+
+        holder.view_Line2.setBackgroundColor(ContextCompat.getColor(holder.layout.getContext(), item.getView3()));
+
 
 
 

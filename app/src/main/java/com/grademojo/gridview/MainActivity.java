@@ -40,74 +40,53 @@ public class MainActivity extends AppCompatActivity {
         List<Getter> input = new ArrayList<>();
 
 
-        input.add(new Getter(R.drawable.ic_proged_outline_search_user_blue_64dp,"Add ",R.color.blue));
+        input.add(new Getter(
+                R.drawable.ic_proged_outline_search_user_blue_64dp,
+                "first ",
+                R.color.blue,R.color.white,R.color.grey));
 
         input.add(new Getter(
-            R.drawable.ic_proged_outline_search_user_blue_64dp,
-                "Add record",
-                R.color.grey
+                R.drawable.ic_proged_outline_search_user_blue_64dp,
+                "Second",
+                R.color.grey,R.color.grey,R.color.grey
         ));
 
 
         input.add(new Getter(
                 R.drawable.ic_proged_outline_search_user_blue_64dp,
-                "Add record",
-                R.color.light_blue
+                "third",
+                R.color.light_blue,R.color.white,R.color.grey
         ));
 
 
         input.add(new Getter(
                 R.drawable.ic_proged_outline_search_user_blue_64dp,
-                "Add record",
-                R.color.yellow
+                "fourth",
+                R.color.yellow,R.color.grey,R.color.grey
         ));
 
 
 
         input.add(new Getter(
                 R.drawable.ic_proged_outline_search_user_blue_64dp,
-                "Add record",
-                R.color.orange
+                "five",
+                R.color.orange,R.color.white,R.color.grey
         ));
 
 
         input.add(new Getter(
                 R.drawable.ic_proged_outline_search_user_blue_64dp,
-                "Add record",
-                R.color.cardview_shadow_end_color
+                "six",
+                R.color.orange,R.color.grey,R.color.grey
         ));
 
 
         input.add(new Getter(
                 R.drawable.ic_proged_outline_search_user_blue_64dp,
-                "Add record",
-                R.color.blue
+                "seven",
+                R.color.blue,R.color.white,R.color.white
         ));
 
-
-
-
-
-//
-//        for (int i = 0; i < 7; i++) {
-//
-//
-//            Getter getter_getter = new Getter();
-//
-//
-//
-//            getter_getter.setSearch("SEARCH\\nSTUDENT"+i);
-//            getter_getter.setImage_icon(R.drawable.ic_proged_outline_search_user_blue_64dp);
-//            getter_getter.setView1(R.drawable.xml_blue_bg);
-//
-//
-//
-//
-//
-//
-//
-//            input.add(getter_getter);
-//        }
 
         m_Adapter = new My_Adapter(input);
         recyclerView.setAdapter(m_Adapter);
