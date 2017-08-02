@@ -1,5 +1,7 @@
 package com.grademojo.gridview;
 
+import android.widget.ImageView;
+
 /**
  * Created by sapling_a0 on 28/7/17.
  */
@@ -7,20 +9,48 @@ package com.grademojo.gridview;
 public class Getter {
 
 
-    private String class2;
+    private String search;
+
+    private int image_icon;
+
+    Getter(int ic_proged_outline_search_user_blue_64dp, String s, int blue) {
+    }
+
+    public void setView1(int view1) {
+        this.view1 = view1;
+    }
+
+    public int getView1() {
+        return view1;
+    }
+
+    private int view1;
+
+    public int getImage_icon() {
+        return image_icon;
+    }
 
 
+    public String getSearch() {
 
-    public String getClass2() {
-        return class2;
+        return search;
+    }
+
+
+    public void setImage_icon(int image_icon) {
+        this.image_icon = image_icon;
     }
 
 
 
 
-    public void setClass2(String class2) {
-        this.class2 = class2;
+    public void setSearch(String search) {
+
+        this.search = search;
     }
+
+
+
 
 
 

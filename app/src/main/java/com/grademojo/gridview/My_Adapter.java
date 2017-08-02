@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -21,7 +22,11 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
 
         
 
-        public TextView text_Name;
+        public TextView text_search;
+
+        public ImageView imageView_search;
+
+        public View view_Line;
 
 
 
@@ -35,7 +40,13 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
 
             layout = itemView;
 
-            text_Name = (TextView) itemView.findViewById(R.id.text_name);
+            text_search = (TextView) itemView.findViewById(R.id.search1);
+
+            imageView_search = (ImageView) itemView.findViewById(R.id.image);
+
+            view_Line = itemView.findViewById(R.id.view_line);
+
+
 
 
 
@@ -67,7 +78,7 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
 
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        final String class2= values.get(position).getClass2();
+        Getter item = values.get(position);
 
 
 
@@ -83,9 +94,15 @@ public class My_Adapter extends RecyclerView.Adapter<My_Adapter.ViewHolder> {
 
         //Integer.parseInt(view.getTag().toString())
 
-        holder.text_Name.setText(" " +class2);
+        holder.imageView_search.setImageResource(
+                item.getImage_icon()
+        );
+
+       holder.text_search.setText(""+item.getSearch());
 
 
+
+     holder.view_Line.setBackgroundColor(item.getView1());
 
 
 
