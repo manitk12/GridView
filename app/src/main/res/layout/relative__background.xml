@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/relative_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+
+            android:src="@drawable/ic_proged_outline_search_user_blue_64dp"
+            />
+
+
+        <TextView
+            android:id="@+id/search1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+
+            android:text="SEARCH\nSTUDENT"
+            />
+
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_below="@+id/search1"
+            android:background="@drawable/xml_blue_bg"
+            android:layout_alignStart="@+id/image"
+            android:layout_alignEnd="@+id/image"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+
+
+            >
+
+
+        </View>
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:layout_alignBottom="@+id/relative_1"
+        android:layout_alignTop="@+id/relative_1"
+
+
+        />
+
+    <View
+        android:id="@+id/view_line2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/grey"
+        android:layout_alignParentBottom="true"
+
+
+        />
+
+</RelativeLayout>
+
