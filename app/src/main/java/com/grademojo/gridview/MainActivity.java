@@ -25,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private List<Getter> input;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
